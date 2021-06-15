@@ -23,8 +23,11 @@ class Node:
 
 
 class NoDict:
-    def __init__(self, num_buckets=10):
-        self.buckets = None
+
+    def __init__(self, buckets=[], num_buckets=10):
+        buckets = [[] for _ in range(num_buckets)]
+        self.num_buckets = num_buckets
+        self.buckets = buckets
         # Your code here
 
     def __repr__(self):
