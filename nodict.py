@@ -13,7 +13,7 @@ references = """https://www.pythontutorial.net/python-oop/python-__eq__/#:~:text
 
 class Node:
     def __init__(self, key, value=None):
-        self.hash = self.__hash__
+        self.hash = hash(key)
         self.key = key
         self.value = value
 
@@ -34,12 +34,12 @@ class NoDict:
 
     def __repr__(self):
         # Your code here
-        return '\n'.join([f'{self.__class__.__name__}.{i}:{bucket}' for i,
+        return "\n".join([f'{self.__class__.__name__}.{i}:{bucket}' for i,
                          bucket in enumerate(self.buckets)])
 
     def add(self, key, value):
-        # Your code here
-        return
+        new_node = Node(key, value)
+        return new_node
 
     def get(self, key):
         # Your code here
