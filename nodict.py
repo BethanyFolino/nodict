@@ -3,18 +3,17 @@
 Implementation of the NoDict assignment
 """
 
-__author__ = '???'
+__author__ = 'Bethany Folino'
 
 
 class Node:
     def __init__(self, key, value=None):
-        self.hash = None
-        self.key = None
-        self.value = None
+        self.hash = hash
+        self.key = key
+        self.value = value
 
     def __repr__(self):
-        # Your code here
-        return
+        return f"{self.__class__.__name__}({self.key}, {self.value})"
 
     def __eq__(self, other):
         # Your code here
@@ -26,7 +25,7 @@ class NoDict:
         self.buckets = None
         # Your code here
 
-    def __repr__(self):
+    def __repr__(self, key, value=None):
         # Your code here
         return
 
