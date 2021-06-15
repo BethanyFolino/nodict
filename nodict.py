@@ -6,7 +6,9 @@ Implementation of the NoDict assignment
 __author__ = 'Bethany Folino'
 references = """https://www.pythontutorial.net/python-oop/python-__eq__/#:~:text=
                Python%20automatically%20calls%20the%20__,
-               the%20__eq__%20method."""
+               the%20__eq__%20method.
+               https://stackoverflow.com/questions/12791501/python-
+               initializing-a-list-of-lists"""
 
 
 class Node:
