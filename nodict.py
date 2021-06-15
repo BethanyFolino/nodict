@@ -4,11 +4,14 @@ Implementation of the NoDict assignment
 """
 
 __author__ = 'Bethany Folino'
+references = """https://www.pythontutorial.net/python-oop/python-__eq__/#:~:text=
+               Python%20automatically%20calls%20the%20__,
+               the%20__eq__%20method."""
 
 
 class Node:
     def __init__(self, key, value=None):
-        self.hash = hash
+        self.hash = self.__hash__
         self.key = key
         self.value = value
 
@@ -16,8 +19,7 @@ class Node:
         return f"{self.__class__.__name__}({self.key}, {self.value})"
 
     def __eq__(self, other):
-        # Your code here
-        return
+        return self.key == other.key
 
 
 class NoDict:
@@ -25,9 +27,10 @@ class NoDict:
         self.buckets = None
         # Your code here
 
-    def __repr__(self, key, value=None):
+    def __repr__(self):
         # Your code here
-        return
+        return '\n'.join([f'{self.__class__.__name__}.{i}:{bucket}' for i,
+                         bucket in enumerate(self.buckets)])
 
     def add(self, key, value):
         # Your code here
