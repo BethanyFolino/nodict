@@ -38,14 +38,18 @@ class NoDict:
     def add(self, key, value):
         new_node = Node(key, value)
         index = new_node.hash % self.num_buckets
-        for each_node in self.buckets[index]:
-            if each_node == new_node:
-                self.buckets[index].remove(each_node)
+        for bucket_node in self.buckets[index]:
+            if bucket_node == new_node:
+                self.buckets[index].remove(bucket_node)
         self.buckets[index].append(new_node)
 
     def get(self, key):
-        # Your code here
-        return
+        node_to_find = Node(key)
+        index = node_to_find.hash % self.num_buckets
+        for node_holder in self.buckets[index]:
+            if node_holder == node_to_find:
+                return node_to_find.value
+        raise KeyError(f"{key} not found")
 
     def __getitem__(self, key):
         # Your code here
